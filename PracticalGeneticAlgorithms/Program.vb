@@ -13,9 +13,14 @@ Module Program
 
             Select Case Tool
                 Case "NelderMead"
-                    Dim A = New Point(MathsHelpers.RandomInRange(XMin, XMax), MathsHelpers.RandomInRange(YMin, YMax))
+                    ' Create a random triangle
+                    Dim Triangle = New List(Of Point)
+                    For I = 1 To 3
+                        Triangle.Add(New Point(MathsHelpers.RandomInRange(XMin, XMax), MathsHelpers.RandomInRange(YMin, YMax)))
+                    Next
 
-                    Console.WriteLine(String.Format("A is at ({0}, {1})", A.X, A.Y))
+                    Triangle.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
+
                 Case "Print"
                     Const XStep = 0.1
 
@@ -42,7 +47,4 @@ Module Program
     Function F(ByVal X As Double, ByVal Y As Double) As Double
         Return (X * Math.Sin(4 * X)) + (1.1 * Y * Math.Sin(2 * Y))
     End Function
-
-
-
 End Module
