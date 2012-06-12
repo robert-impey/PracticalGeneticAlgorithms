@@ -1,6 +1,6 @@
 ﻿Imports PracticalGeneticAlgorithms.Lib
 
-Module Module1
+Module Program
 
     Sub Main()
         If My.Application.CommandLineArgs.Count > 0 Then
