@@ -22,14 +22,7 @@ Module Program
 
                     Select Case Tool
                         Case "Solve"
-                            ' Create a random triangle
-                            Dim Triangle = New List(Of Point)
-                            For I = 1 To 3
-                                Triangle.Add(New Point(MathsHelpers.RandomInRange(XMin, XMax), MathsHelpers.RandomInRange(YMin, YMax)))
-                            Next
-
-                            'Triangle.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
-
+                            NelderMeadProblem.Solve()
                         Case "PrintOutput"
                             Const XStep = 0.1
                             Const YStep = 0.1
