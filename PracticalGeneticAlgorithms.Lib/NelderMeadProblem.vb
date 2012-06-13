@@ -1,20 +1,18 @@
 ﻿Public Class NelderMeadProblem
-    Property Simplex As Simplex
-
     Property XMin As Double
     Property XMax As Double
     Property YMin As Double
     Property YMax As Double
 
     Sub Solve()
-        ' Create a random triangle
-        Dim Triangle = New List(Of Point)
+        ' Create a random simplex
+        Dim Simplex = New Simplex
         For I = 1 To 3
-            Triangle.Add(New Point(MathsHelpers.RandomInRange(XMin, XMax), _
+            Simplex.Points.Add(New Point(MathsHelpers.RandomInRange(XMin, XMax), _
                                    MathsHelpers.RandomInRange(YMin, YMax)))
         Next
 
-        'Triangle.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
+        Simplex.Points.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
     End Sub
 
     Sub PrintOutput(ByVal XStep As Double, _
