@@ -38,6 +38,6 @@
     ''' <returns></returns>
     ''' <remarks></remarks>
     Public Shared Function F(ByVal X As Double, ByVal Y As Double) As Double
-        Return (X * Math.Sin(4 * X)) + (1.1 * Y * Math.Sin(2 * Y))
+        Return F_1_1(X, Y)
     End Function
 End Class
