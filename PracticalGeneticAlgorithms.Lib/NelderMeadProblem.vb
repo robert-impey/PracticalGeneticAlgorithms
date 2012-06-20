@@ -7,12 +7,12 @@
     Sub Solve()
         ' Create a random simplex
         Dim Simplex = New Simplex
+        Simplex.F = AddressOf F
         For I = 1 To 3
             Simplex.Points.Add(New Point(MathsHelpers.RandomInRange(XMin, XMax), _
                                    MathsHelpers.RandomInRange(YMin, YMax)))
         Next
 
-        Simplex.Points.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
     End Sub
 
     Sub PrintOutput(ByVal XStep As Double, _
