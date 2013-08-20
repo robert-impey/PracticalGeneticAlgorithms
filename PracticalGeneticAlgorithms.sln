@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Basic Express 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PracticalGeneticAlgorithms", "PracticalGeneticAlgorithms\PracticalGeneticAlgorithms.vbproj", "{6A070397-C175-4E4D-9AA1-111FBEE1B999}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PracticalGeneticAlgorithms.Lib", "PracticalGeneticAlgorithms.Lib\PracticalGeneticAlgorithms.Lib.vbproj", "{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}"
@@ -34,6 +34,7 @@ Global
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Debug|x86.Build.0 = Debug|Any CPU
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0D7CBBAE-DFE8-4BC0-ABD8-6B9A85DE8C34}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
@@ -44,6 +45,7 @@ Global
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Debug|x86.Build.0 = Debug|Any CPU
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A9B5ABFD-4C78-40CD-9971-A62981EE859C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
