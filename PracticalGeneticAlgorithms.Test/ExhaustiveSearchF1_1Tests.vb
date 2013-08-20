@@ -10,7 +10,7 @@ Imports PracticalGeneticAlgorithms.Lib
 
     Private exhaustiveSearcher As ExhaustiveF1_1Searcher
 
-    Private Const Tolerance = 0.01
+    Private Const Tolerance = 0.001
 
     Private solution As F1_1Solution
 
@@ -33,8 +33,8 @@ Imports PracticalGeneticAlgorithms.Lib
         exhaustiveSearcher.YMax = 10
 
         ' 4 d.p. was way too slow (unsurprisingly)
-        exhaustiveSearcher.XStep = 0.01
-        exhaustiveSearcher.YStep = 0.01
+        exhaustiveSearcher.XStep = 0.001
+        exhaustiveSearcher.YStep = 0.001
 
         solution = exhaustiveSearcher.Solve()
     End Sub

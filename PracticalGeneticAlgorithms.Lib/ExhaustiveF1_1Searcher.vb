@@ -9,6 +9,9 @@
 
     Public Function Solve() As F1_1Solution
         Dim minimalSolution = New F1_1Solution
+        minimalSolution.X = XMin
+        minimalSolution.Y = YMin
+        minimalSolution.Cost = FunctionsToMinimise.F_1_1(XMin, YMin)
 
         Dim x = XMin
         Do While x <= XMax
@@ -16,7 +19,7 @@
             Do While y <= YMax
                 Dim candidateCost = FunctionsToMinimise.F_1_1(x, y)
 
-                If minimalSolution Is Nothing OrElse candidateCost < minimalSolution.Cost Then
+                If candidateCost < minimalSolution.Cost Then
                     minimalSolution.X = x
                     minimalSolution.Y = y
                     minimalSolution.Cost = candidateCost
