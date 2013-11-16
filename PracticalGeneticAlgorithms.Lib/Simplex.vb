@@ -1,7 +1,7 @@
 ﻿Public Class Simplex
     Property Points As List(Of Point) = New List(Of Point)
 
-    Public Delegate Function FunctionToMinimise(ByVal X As Double, ByVal Y As Double) As Double
+    Public Delegate Function FunctionToMinimise(ByVal p As Point) As Double
     Public Property F As FunctionToMinimise
 
     Private Function GetPoint(ByVal I As Integer) As Point
@@ -28,6 +28,6 @@
     End Property
 
     Private Sub SortPoints()
-        Points.Sort(Function(p1, p2) F(p1.X, p1.Y).CompareTo(F(p2.X, p2.Y)))
+        Points.Sort(Function(p1, p2) F(p1).CompareTo(F(p2)))
     End Sub
 End Class

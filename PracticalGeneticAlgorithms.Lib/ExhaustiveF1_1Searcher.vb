@@ -11,13 +11,13 @@
         Dim minimalSolution = New F1_1Solution
         minimalSolution.X = XMin
         minimalSolution.Y = YMin
-        minimalSolution.Cost = FunctionsToMinimise.F_1_1(XMin, YMin)
+        minimalSolution.Cost = FunctionsToMinimise.F_1_1(New Point(XMin, YMin))
 
         Dim x = XMin
         Do While x <= XMax
             Dim y = YMin
             Do While y <= YMax
-                Dim candidateCost = FunctionsToMinimise.F_1_1(x, y)
+                Dim candidateCost = FunctionsToMinimise.F_1_1(New Point(x, y))
 
                 If candidateCost < minimalSolution.Cost Then
                     minimalSolution.X = x
