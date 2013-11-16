@@ -1,33 +1,30 @@
 ﻿Public Class Simplex
-    Property Points As List(Of Point) = New List(Of Point)
+    Property Solutions As List(Of Solution2D) = New List(Of Solution2D)
 
-    Public Delegate Function FunctionToMinimise(ByVal p As Point) As Double
-    Public Property F As FunctionToMinimise
-
-    Private Function GetPoint(ByVal I As Integer) As Point
-        SortPoints()
-        Return Points(I)
+    Private Function GetSolution(ByVal I As Integer) As Solution2D
+        SortSolutions()
+        Return Solutions(I)
     End Function
 
-    Public ReadOnly Property BestPoint As Point
+    Public ReadOnly Property BestSolution As Solution2D
         Get
-            Return GetPoint(0)
+            Return GetSolution(0)
         End Get
     End Property
 
-    Public ReadOnly Property MiddlePoint As Point
+    Public ReadOnly Property MiddleSolution As Solution2D
         Get
-            Return GetPoint(1)
+            Return GetSolution(1)
         End Get
     End Property
 
-    Public ReadOnly Property WorstPoint As Point
+    Public ReadOnly Property WorstSolution As Solution2D
         Get
-            Return GetPoint(2)
+            Return GetSolution(2)
         End Get
     End Property
 
-    Private Sub SortPoints()
-        Points.Sort(Function(p1, p2) F(p1).CompareTo(F(p2)))
+    Private Sub SortSolutions()
+        Solutions.Sort(Function(s1, s2) s1.Cost.CompareTo(s2.Cost))
     End Sub
 End Class

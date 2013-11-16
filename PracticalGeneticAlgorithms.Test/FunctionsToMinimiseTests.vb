@@ -7,7 +7,7 @@ Imports PracticalGeneticAlgorithms.Lib
         Dim Y = 7.7
 
         Dim Expected = 16.5967
-        Dim Result = FunctionsToMinimise.F_1_1(New Point(X, Y))
+        Dim Result = FunctionsToMinimise.F_1_1(New Point2D(X, Y))
 
         Dim Tolerance = Math.Pow(10, -4)
 

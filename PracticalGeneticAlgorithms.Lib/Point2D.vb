@@ -1,4 +1,4 @@
-﻿Public Class Point
+﻿Public Class Point2D
     Property X As Double
     Property Y As Double
 

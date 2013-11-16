@@ -1,18 +1,18 @@
 ﻿Imports NUnit.Framework
 Imports PracticalGeneticAlgorithms.Lib
 
-<TestFixture> Public Class ExhaustiveSearchF1_1Tests
+<TestFixture> Public Class ExhaustiveSearcher2DF1_1Tests
     Inherits AssertionHelper
 
     Private expectedX As Double
     Private expectedY As Double
     Private expectedCost As Double
 
-    Private exhaustiveSearcher As ExhaustiveF1_1Searcher
+    Private exhaustiveSearcher As ExhaustiveSearcher2D
 
     Private Const Tolerance = 0.01
 
-    Private solution As F1_1Solution
+    Private solution As Solution2D
 
     <TestFixtureSetUp> Public Sub TestFixtureSetUp()
         ' These are the values that appear in the book on page 6.
@@ -25,7 +25,8 @@ Imports PracticalGeneticAlgorithms.Lib
         ' This cost (from the book) is found.
         expectedCost = -18.5547
 
-        exhaustiveSearcher = New ExhaustiveF1_1Searcher
+        exhaustiveSearcher = New ExhaustiveSearcher2D
+        exhaustiveSearcher.F = AddressOf F_1_1
 
         exhaustiveSearcher.XMin = 0
         exhaustiveSearcher.YMin = 0
@@ -44,11 +45,11 @@ Imports PracticalGeneticAlgorithms.Lib
     End Sub
 
     <Test> Public Sub FindsX()
-        Expect(solution.X, [Is].EqualTo(expectedX).Within(Tolerance))
+        Expect(solution.P.X, [Is].EqualTo(expectedX).Within(Tolerance))
     End Sub
 
     <Test> Public Sub FindsY()
-        Expect(solution.Y, [Is].EqualTo(expectedY).Within(Tolerance))
+        Expect(solution.P.Y, [Is].EqualTo(expectedY).Within(Tolerance))
     End Sub
 
     <Test> Public Sub FindsCost()

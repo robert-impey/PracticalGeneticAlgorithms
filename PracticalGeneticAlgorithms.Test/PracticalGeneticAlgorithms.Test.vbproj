@@ -68,7 +68,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExhaustiveSearchF1_1Tests.vb" />
+    <Compile Include="ExhaustiveSearcher2DF1_1Tests.vb" />
     <Compile Include="FunctionsToMinimiseTests.vb" />
     <Compile Include="MathsHelpersTest.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

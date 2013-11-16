@@ -3,38 +3,65 @@
 Module Program
 
     Sub Main()
-        If 2 = My.Application.CommandLineArgs.Count Then
-            Dim Method = My.Application.CommandLineArgs(0)
-            Dim Tool = My.Application.CommandLineArgs(1)
+        Try
+            If 3 = My.Application.CommandLineArgs.Count Then
+                Dim functionToSolve = My.Application.CommandLineArgs(0)
+                Dim searcherType = My.Application.CommandLineArgs(1)
+                Dim action = My.Application.CommandLineArgs(2)
 
-            Const XMin = 0.0
-            Const XMax = 10.0
-            Const YMin = 0.0
-            Const YMax = 10.0
+                Const XMin = 0.0
+                Const XMax = 10.0
+                Const YMin = 0.0
+                Const YMax = 10.0
+                Const XStep = 0.1
+                Const YStep = 0.1
 
-            Select Case Method
-                Case "NelderMead"
-                    Dim NelderMeadProblem = New NelderMeadProblem
-                    NelderMeadProblem.XMin = XMin
-                    NelderMeadProblem.XMax = XMax
-                    NelderMeadProblem.YMin = YMin
-                    NelderMeadProblem.YMax = YMax
+                Dim searcher As Searcher2D
 
-                    Select Case Tool
-                        Case "Solve"
-                            NelderMeadProblem.Solve()
-                        Case "PrintOutput"
-                            Const XStep = 0.1
-                            Const YStep = 0.1
-                            Const Separator = ","
+                Select Case searcherType
+                    Case "NelderMead"
+                        searcher = New NelderMeadSearcher2D
+                    Case "Exhaustive"
+                        searcher = New ExhaustiveSearcher2D
+                    Case Else
+                        Throw New Exception("Unrecognised searcher!")
+                End Select
 
-                            NelderMeadProblem.PrintOutput(XStep, YStep, Separator)
-                    End Select
+                Select Case functionToSolve
+                    Case "F_1_1"
+                        searcher.F = AddressOf F_1_1
+                    Case Else
+                        Throw New Exception("Unrecognised function to solve!")
+                End Select
 
+                searcher.XMin = XMin
+                searcher.XMax = XMax
+                searcher.YMin = YMin
+                searcher.YMax = YMax
+                searcher.XStep = XStep
+                searcher.YStep = YStep
 
-            End Select
-        Else
-            Console.WriteLine("Tell me what to do!")
-        End If
+                DoAction(searcher, action)
+            Else
+                Throw New Exception("Tell me what to do!")
+            End If
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DoAction(ByVal searcher As Searcher2D, ByVal action As String)
+        Select Case action
+            Case "Solve"
+                Dim solution = searcher.Solve()
+
+                Console.WriteLine(String.Format("Solution found f({0}, {1}) = {2}", solution.P.X, solution.P.Y, solution.Cost))
+            Case "PrintOutput"
+                Const Separator = ","
+
+                searcher.PrintOutput(Separator)
+            Case Else
+                Throw New Exception("Unrecognised action!")
+        End Select
     End Sub
 End Module
