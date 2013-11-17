@@ -11,7 +11,7 @@
 
     MustOverride Function Solve() As Solution2D
 
-    Sub PrintOutput(ByVal Separator As String)
+    Sub PrintOutput()
         Dim solution = New Solution2D(New Point2D(XMin, YMin), Me)
 
         Dim X = XMin
@@ -19,11 +19,10 @@
             Dim Y = YMin
             While Y <= YMax
                 solution.P = New Point2D(X, Y)
-                Console.Write(solution.Cost & Separator)
+                Console.WriteLine(String.Format("{0},{1},{2}", solution.P.X, solution.P.Y, solution.Cost))
                 Y += Granularity
             End While
             X += Granularity
-            Console.WriteLine()
         End While
     End Sub
 End Class

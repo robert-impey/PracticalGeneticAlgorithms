@@ -38,6 +38,7 @@ Module Program
                 searcher.XMax = XMax
                 searcher.YMin = YMin
                 searcher.YMax = YMax
+
                 searcher.Granularity = Granularity
 
                 DoAction(searcher, action)
@@ -56,9 +57,7 @@ Module Program
 
                 Console.WriteLine(String.Format("Solution found f({0}, {1}) = {2}", solution.P.X, solution.P.Y, solution.Cost))
             Case "PrintOutput"
-                Const Separator = ","
-
-                searcher.PrintOutput(Separator)
+                searcher.PrintOutput()
             Case Else
                 Throw New Exception("Unrecognised action!")
         End Select
