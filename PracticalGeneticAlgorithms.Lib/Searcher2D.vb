@@ -4,8 +4,7 @@
     Property YMin As Double
     Property YMax As Double
 
-    Property XStep As Double
-    Property YStep As Double
+    Property Granularity As Double
 
     Public Delegate Function FunctionToMinimise(ByVal p As Point2D) As Double
     Public Property F As FunctionToMinimise
@@ -21,9 +20,9 @@
             While Y <= YMax
                 solution.P = New Point2D(X, Y)
                 Console.Write(solution.Cost & Separator)
-                Y += YStep
+                Y += Granularity
             End While
-            X += XStep
+            X += Granularity
             Console.WriteLine()
         End While
     End Sub

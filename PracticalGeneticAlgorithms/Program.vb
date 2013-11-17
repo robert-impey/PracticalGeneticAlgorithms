@@ -13,8 +13,8 @@ Module Program
                 Const XMax = 10.0
                 Const YMin = 0.0
                 Const YMax = 10.0
-                Const XStep = 0.1
-                Const YStep = 0.1
+
+                Const Granularity = 0.1
 
                 Dim searcher As Searcher2D
 
@@ -38,8 +38,7 @@ Module Program
                 searcher.XMax = XMax
                 searcher.YMin = YMin
                 searcher.YMax = YMax
-                searcher.XStep = XStep
-                searcher.YStep = YStep
+                searcher.Granularity = Granularity
 
                 DoAction(searcher, action)
             Else

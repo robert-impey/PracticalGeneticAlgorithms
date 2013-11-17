@@ -34,8 +34,7 @@ Imports PracticalGeneticAlgorithms.Lib
         exhaustiveSearcher.YMax = 10
 
         ' 4 d.p. was way too slow (unsurprisingly)
-        exhaustiveSearcher.XStep = 0.01
-        exhaustiveSearcher.YStep = 0.01
+        exhaustiveSearcher.Granularity = 0.01
 
         solution = exhaustiveSearcher.Solve()
     End Sub

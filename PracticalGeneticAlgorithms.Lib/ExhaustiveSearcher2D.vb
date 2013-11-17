@@ -14,9 +14,9 @@
                     minimalSolution = candidateSolution
                 End If
 
-                y += YStep
+                y += Granularity
             Loop
-            x += XStep
+            x += Granularity
         Loop
 
         Return minimalSolution
