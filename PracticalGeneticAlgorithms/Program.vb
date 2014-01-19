@@ -55,7 +55,9 @@ Module Program
             Case "Solve"
                 Dim solution = searcher.Solve()
 
-                Console.WriteLine(String.Format("Solution found f({0}, {1}) = {2}", solution.P.X, solution.P.Y, solution.Cost))
+                Console.WriteLine(
+                    String.Format("Solution found f({0}, {1}) = {2}", _
+                                  solution.P.X, solution.P.Y, solution.Cost))
             Case "PrintOutput"
                 searcher.PrintOutput()
             Case Else
