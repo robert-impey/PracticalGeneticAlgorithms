@@ -61,11 +61,14 @@ Module Program
     Private Sub DoAction(ByVal searcher As Searcher2D, ByVal action As String)
         Select Case action
             Case "Solve"
+                Dim aStopWatch = Stopwatch.StartNew()
+
                 Dim solution = searcher.Solve()
 
                 Console.WriteLine(
                     String.Format("Solution found f({0}, {1}) = {2}", _
                                   solution.P.X, solution.P.Y, solution.Cost))
+                Console.WriteLine(String.Format("Time elapsed: {0}", aStopWatch.Elapsed.ToString))
             Case "PrintOutput"
                 searcher.PrintOutput()
             Case Else
