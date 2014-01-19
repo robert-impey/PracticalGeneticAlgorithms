@@ -4,17 +4,25 @@ Module Program
 
     Sub Main()
         Try
-            If 3 = My.Application.CommandLineArgs.Count Then
+            If My.Application.CommandLineArgs.Count >= 3 Then
                 Dim functionToSolve = My.Application.CommandLineArgs(0)
                 Dim searcherType = My.Application.CommandLineArgs(1)
                 Dim action = My.Application.CommandLineArgs(2)
+
+                Dim Granularity As Double
+                If My.Application.CommandLineArgs.Count >= 4 Then
+                    If Not Double.TryParse(My.Application.CommandLineArgs(3), Granularity) Then
+                        Throw New Exception(String.Format("Unable to parse the granularity: {0}!", _
+                                                          My.Application.CommandLineArgs(3)))
+                    End If
+                Else
+                    Granularity = 0.1
+                End If
 
                 Const XMin = 0.0
                 Const XMax = 10.0
                 Const YMin = 0.0
                 Const YMax = 10.0
-
-                Const Granularity = 0.1
 
                 Dim searcher As Searcher2D
 
