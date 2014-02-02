@@ -1,7 +1,6 @@
 ﻿Imports PracticalGeneticAlgorithms.Lib
 
 Module Program
-
     Sub Main()
         Try
             If My.Application.CommandLineArgs.Count >= 3 Then
