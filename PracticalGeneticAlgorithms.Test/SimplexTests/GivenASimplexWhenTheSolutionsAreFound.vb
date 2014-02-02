@@ -25,18 +25,23 @@ Imports PracticalGeneticAlgorithms.Lib
     <Test()> Public Sub ThenTheBestSolutionsXValueShouldBeCorrect()
         Assert.That(7.6, [Is].EqualTo(Simplex.BestSolution.P.X).Within(Tolerance))
     End Sub
+
     <Test()> Public Sub ThenTheBestSolutionsYValueShouldBeCorrect()
         Assert.That(8.4, [Is].EqualTo(Simplex.BestSolution.P.Y).Within(Tolerance))
     End Sub
+
     <Test()> Public Sub ThenTheMiddleSolutionsXValueShouldBeCorrect()
         Assert.That(4.2, [Is].EqualTo(Simplex.MiddleSolution.P.X).Within(Tolerance))
     End Sub
+
     <Test()> Public Sub ThenTheMiddleSolutionsYValueShouldBeCorrect()
         Assert.That(9.2, [Is].EqualTo(Simplex.MiddleSolution.P.Y).Within(Tolerance))
     End Sub
+
     <Test()> Public Sub ThenTheWorstSolutionsXValueShouldBeCorrect()
         Assert.That(1.4, [Is].EqualTo(Simplex.WorstSolution.P.X).Within(Tolerance))
     End Sub
+
     <Test()> Public Sub ThenTheWorstSolutionsYValueShouldBeCorrect()
         Assert.That(9.4, [Is].EqualTo(Simplex.WorstSolution.P.Y).Within(Tolerance))
     End Sub
