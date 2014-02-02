@@ -86,7 +86,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SimplexTests\GivenASimplexWhenTheSolutionsAreFound.vb" />
+    <Compile Include="NelderMeadTests\GivenA2dSearcherWhenASimplexIsCreated.vb" />
+    <Compile Include="NelderMeadTests\GivenASimplexWhenTheSolutionsAreFound.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
